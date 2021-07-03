@@ -9,7 +9,7 @@ function App() {
 
   const[result, setResult] = useState(0)
 
-  calculate =()=>{
+  const calculate =()=>{
     try {
       setResult((eval(result) || "") + "")
     }catch(e){
@@ -17,15 +17,15 @@ function App() {
     }
   }
 
-  reset =()=>{
+  const reset =()=>{
     setResult("")
   }
 
-  backspace =()=>{
+  const backspace =()=>{
     setResult(result.slice(0,-1))
   }
 
-  onClick = button =>{
+ const  onClick = button =>{
     if(button === '='){
       calculate()
     }else if(button === 'C'){
