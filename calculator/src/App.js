@@ -2,7 +2,7 @@
 import './App.css';
 import Results from './components/Results'
 import KeyPadComponent from './components/KeyPadComponent';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     setResult(result.slice(0,-1))
   }
 
- const  onClick = button =>{
+ const onClick = button =>{
     if(button === '='){
       calculate()
     }else if(button === 'C'){
@@ -44,7 +44,7 @@ function App() {
       <div className="calculator-body">
         <h1>Calculator With Hooks</h1>
         <Results result={useState(result)}/>
-        <KeyPadComponent onClick={() => setResult(result)}/>
+        <KeyPadComponent onClick={onClick}/>
       </div>
     </div>
   );
